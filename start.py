@@ -13,12 +13,13 @@ class Startup:
         if self.osName == 'Linux':
             venvCommand = "pip install virtualenv && virtualenv venv && "
             venvCommand += "source /venv/bin/activate && "
-            venvCommand += "pip3 install tensorflow gym keras keras-rl2 && "
+            venvCommand += "pip3 install numpy tensorflow gym keras keras-rl2 Pillow torch torchvision torchaudio xformers && "
             venvCommand += "deactivate"
         elif self.osName == 'Windows':
             venvCommand = "py -m venv venv && "
-            venvCommand += ".\\venv\Scripts\\activate.bat && "
-            venvCommand += ".\\venv\Scripts\\pip.exe install tensorflow gym keras keras-rl2 && "
+            venvCommand += ".\\venv\\Scripts\\activate.bat && "
+            venvCommand += ".\\venv\\Scripts\\pip.exe install numpy tensorflow gym keras keras-rl2 Pillow xformers && "
+            venvCommand += ".\\venv\\Scripts\\pip.exe install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu117"
             venvCommand += ".\\venv\\Scripts\\deactivate.bat"
         
         return venvCommand
