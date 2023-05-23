@@ -1,0 +1,6 @@
+numpy
+tensorflow
+gym
+keras
+keras-rl2
+Pillow
